@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int gcd(int, int);
+
+int main() {
+    int n1, n2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &n1, &n2);
+
+    int lcm = (n1 * n2) / gcd(n1, n2);
+
+    printf("The LCM of %d and %d is %d", n1, n2, lcm);
+
+    return 0;
+}
+
+int gcd(int a, int b) {
+    if (b != 0)
+        return gcd(b, a % b);
+    else
+        return a;
+}
+
